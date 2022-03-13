@@ -1,0 +1,55 @@
+#!/bin/sh
+
+# Jump to repository root
+cd "$(git rev-parse --show-toplevel)"
+
+moduleName=$1
+moduleNameLowerCase=$(echo "$moduleName" | tr '[:upper:]' '[:lower:]')
+template="SDKDomain"
+
+# Verify if folder already exists
+[ ! -d "./Output/$moduleName" ] && echo "\n>> Creating $moduleName module\n" || { echo "\n>> $moduleName folder already exists \n"; exit 1; }
+
+echo "============================================================"
+echo ">> 1. Clonando a pasta SDKDomain e colar na raiz do projeto"
+
+cp -R "${template}" "$moduleName"
+cd "$moduleName"
+
+echo ">> 2. Renomeando arquivos e pastas..."
+
+rename(){
+  while read oldName
+  do    
+    newName=$(echo $oldName | sed "s/SDKDomain/$moduleName/")
+    mv "$oldName" "$newName"
+  done
+}
+
+find . -type d -name "SDKDomain*" | rename
+find . -type f -name "SDKDomain*" | rename
+
+echo ">> 3. Renomeando conteudo dos arquivos..."
+
+sed -i '' "s/SDKDomain/$moduleName/" project.yml
+sed -i '' "s/SDKDomain/$moduleName/" swiftgen.yml
+sed -i '' "s/SDKDomain/$moduleName/" Podfile
+sed -i '' "s/SDKDomain/$moduleName/" $moduleName.podspec
+sed -i '' "s/SDKDomain/$moduleName/" SampleApp/project.yml
+sed -i '' "s/SDKDomain/$moduleName/" "${moduleName}Tests/${moduleName}InitializerTests.swift"
+sed -i '' "s/SDKDomain/$moduleName/" "$moduleName/Classes/${moduleName}Initializer.swift"
+sed -i '' "s/SDKModule/$moduleName/" "SampleApp/SampleApp/ViewController.swift"
+sed -i '' "s/import SDKModule/import $moduleName/" "SampleApp/SampleApp/ViewController.swift"
+sed -i '' "s/SDKModuleInitializer.helloWorld()/${moduleName}Initializer.helloWorld()/" "SampleApp/SampleApp/ViewController.swift"
+
+echo ">> 4. Copiando para a pasta Output"
+
+cp -R "../$moduleName" "../Output/"
+rm -rf "../$moduleName"
+
+echo "============================================================"
+echo "\n"
+echo "============================================================"
+echo "SDK $moduleName criado com sucesso"
+echo "============================================================"
+echo "\n"
