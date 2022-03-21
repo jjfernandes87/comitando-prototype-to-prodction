@@ -1,5 +1,5 @@
-# Zero to Prodction
-Repositório principal, do Canal Comitando no Youtube, trazendo a sessão do Zero a Produção, o passo a passo de conhecimento para virar um iOS Sr.
+# Do Protótipo à Produção
+Repositório principal, do Canal Comitando no Youtube, trazendo a sessão do Protótipo à Produção, o passo a passo de um Dev iOS para virar um iOS Sr.
 
 ## Fases do projeto
 
@@ -36,6 +36,8 @@ cd Scripts
 ```
 
 ## Canal no Youtube
+
+- [Comitando]()
 
 
 ## Referências
