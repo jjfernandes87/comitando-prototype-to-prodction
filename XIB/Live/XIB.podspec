@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
 
-  spec.name = 'MVC'
+  spec.name = 'XIB'
   spec.version = '0.1.0'
   spec.summary = 'Framework description.'
   spec.homepage = 'https://framework.com'
@@ -15,17 +15,17 @@ Pod::Spec.new do |spec|
   spec.cocoapods_version = '>= 1.5'
   spec.swift_version = '5.0'
 
-  spec.source_files = 'MVC/**/*.{h,m,swift}'
+  spec.source_files = 'XIB/**/*.{h,m,swift}'
 
   spec.resource_bundles = {
-    'MVC' => [
-      'MVC/**/*.xcassets',
-      'MVC/**/*.xib'
+    'XIB' => [
+      'XIB/**/*.xcassets',
+      'XIB/**/*.xib'
     ]
   }
 
   spec.resources = [
-    'MVC/**/*.strings'
+    'XIB/**/*.strings'
   ]
 
   #spec.dependency 'Dependency', '~> 1.0.0'

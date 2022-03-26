@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MyInvestimentsViewController: UITableViewController {
+final class MyInvestimentsViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

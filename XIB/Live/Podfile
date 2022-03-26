@@ -1,24 +1,24 @@
 
 source 'https://cdn.cocoapods.org/'
 
-platform :ios, '12.0'
+platform :ios, '13.0'
 
 inhibit_all_warnings!
 use_frameworks!
 
-workspace 'MVC'
+workspace 'XIB'
 
-target 'MVC' do
+target 'XIB' do
 
   pod 'SwiftLint'
   pod 'SwiftGen', '6.5.1'
 
-  target 'MVCTests' do
+  target 'XIBTests' do
       #pod 'Dependency', '~> 1.0.0'
   end
 end
 
 target 'SampleApp' do
   project 'SampleApp/SampleApp'
-  pod 'MVC', :path => './'
+  pod 'XIB', :path => './'
 end

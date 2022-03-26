@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AboutViewCell: UITableViewCell {
+final class AboutViewCell: UITableViewCell {
 
     static let cellIdentifier = "aboutViewIdentifier"
     

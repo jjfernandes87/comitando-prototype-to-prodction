@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TitleViewCell: UITableViewCell {
+final class TitleViewCell: UITableViewCell {
     
     static let cellIdentifier = "titleViewIdentifier"
     

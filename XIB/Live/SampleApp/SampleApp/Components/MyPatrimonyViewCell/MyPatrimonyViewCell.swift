@@ -2,12 +2,12 @@
 //  MyPatrimonyViewCell.swift
 //  SampleApp
 //
-//  Created by Julio Fernandes on 23/03/22.
+//  Created by Julio Fernandes on 26/03/22.
 //
 
 import UIKit
 
-final class MyPatrimonyViewCell: UITableViewCell {
+class MyPatrimonyViewCell: UITableViewCell {
 
     static let cellIdentifier = "myPatrimonyViewIdentifier"
     
@@ -23,4 +23,11 @@ final class MyPatrimonyViewCell: UITableViewCell {
         legendLabel.text = model.legend
     }
     
+}
+
+struct PatrimonyModel {
+    let iconName: String = "coloncurrencysign.circle"
+    let title: String = "Patrimônio"
+    let amount: String = "R$ 250.000,00"
+    let legend: String = "ultima atualização 2 min atrás"
 }

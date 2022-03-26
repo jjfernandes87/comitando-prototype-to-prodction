@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HeaderMyPatrimonyViewCell: UITableViewCell {
+final class HeaderMyPatrimonyViewCell: UITableViewCell {
 
     static let cellIdentifier = "headerMyPatrimonyViewIdentifier"
     

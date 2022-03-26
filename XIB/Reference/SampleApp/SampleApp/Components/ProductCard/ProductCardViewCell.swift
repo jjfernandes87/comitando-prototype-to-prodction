@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProductCardViewCell: UITableViewCell {
+final class ProductCardViewCell: UITableViewCell {
 
     static let cellIdentifier = "productCardViewIdentifier"
     

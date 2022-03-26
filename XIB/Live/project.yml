@@ -4,7 +4,7 @@
 #==================================================================================================
 
 #==================================================================================================
-name: MVC
+name: XIB
 #==================================================================================================
 
 settings:
@@ -21,7 +21,7 @@ options:
   createIntermediateGroups: true
   developmentLanguage: "pt-BR"
   deploymentTarget:
-    iOS: "12.0"
+    iOS: "13.0"
 
 configs:
   Debug: debug
@@ -34,13 +34,13 @@ targets:
 #____________________________________________________________
 # Framework
 
-  MVC:
+  XIB:
 
     platform: iOS
     type: framework
     
     sources:
-      - path: MVC
+      - path: XIB
 
     preBuildScripts:
       - script: "${PODS_ROOT}/SwiftGen/bin/swiftgen"
@@ -53,8 +53,8 @@ targets:
     settings:
       CODE_SIGN_STYLE: "Manual"
       DEVELOPMENT_TEAM: ""
-      PRODUCT_BUNDLE_IDENTIFIER: br.com.microfrontendGenerator.MVC
-      INFOPLIST_FILE: MVC/Info.plist
+      PRODUCT_BUNDLE_IDENTIFIER: br.com.microfrontendGenerator.XIB
+      INFOPLIST_FILE: XIB/Info.plist
 
       ENABLE_BITCODE: "NO"
       TARGETED_DEVICE_FAMILY: "1"
@@ -64,28 +64,28 @@ targets:
 #____________________________________________________________
 # Tests
 
-  MVCTests:
+  XIBTests:
 
     platform: iOS
     type: bundle.unit-test
 
     sources:
-      - path: MVCTests
+      - path: XIBTests
         excludes:
           - "__Snapshots__"
           - "**/__Snapshots__"
     
     dependencies:
-      - target: MVC
+      - target: XIB
 
 #==================================================================================================
 schemes:
 #==================================================================================================
 
-  MVCSDK:
+  XIBSDK:
     build:
       targets:
-        MVC: [run, test]
+        XIB: [run, test]
       parallelizeBuild: true
       buildImplicitDependencies: true
     archive:
@@ -96,8 +96,8 @@ schemes:
       config: Debug
       gatherCoverageData: true
       coverageTargets:
-        - MVC
+        - XIB
       targets:
-        - MVCTests
+        - XIBTests
 
 #==================================================================================================

@@ -7,25 +7,9 @@
 
 import UIKit
 
-class TreasuryViewController: UITableViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        tableView.register(UINib(nibName: "AssetCardViewCell", bundle: nil), forCellReuseIdentifier: AssetCardViewCell.cellIdentifier)
-        tableView.register(UINib(nibName: "AboutViewCell", bundle: nil), forCellReuseIdentifier: AboutViewCell.cellIdentifier)
-        tableView.register(UINib(nibName: "TitleViewCell", bundle: nil), forCellReuseIdentifier: TitleViewCell.cellIdentifier)
-    }
+final class TreasuryViewController: BaseProducts {
 
     // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
-    }
-
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
         case 1: return makeTitleViewCell(title: "3 ativos encontrados", tableView: tableView, indexPath: indexPath)
@@ -38,7 +22,8 @@ class TreasuryViewController: UITableViewController {
 
 }
 
-extension TreasuryViewController {
+// MAKR: Make UITableViewCell
+private extension TreasuryViewController {
     
     func makeAbout(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: AboutViewCell.cellIdentifier, for: indexPath) as? AboutViewCell
