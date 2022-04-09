@@ -1,0 +1,73 @@
+//
+//  StocksViewController.swift
+//  SampleApp
+//
+//  Created by Julio Fernandes on 21/03/22.
+//
+
+import UIKit
+
+final class StocksViewController: BaseProducts {
+
+    // MARK: - Table view data source
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        switch indexPath.row {
+        case 1: return makeTitleViewCell(title: "3 ativos encontrados", tableView: tableView, indexPath: indexPath)
+        case 2: return makeAssetCardOne(tableView: tableView, indexPath: indexPath)
+        case 3: return makeAssetCardTwo(tableView: tableView, indexPath: indexPath)
+        case 4: return makeAssetCardThree(tableView: tableView, indexPath: indexPath)
+        default: return makeAbout(tableView: tableView, indexPath: indexPath)
+        }
+    }
+
+}
+
+// MAKR: Make UITableViewCell
+private extension StocksViewController {
+    
+    func makeAbout(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
+        let cell = AboutViewCell()
+        cell.setup(title: "Ativos de renda variável são aqueles cuja remuneração ou retorno de capital não pode ser dimensionado no momento da aplicação, podendo variar positivamente ou negativamente, de acordo com as expectativas do mercado.")
+        return cell
+    }
+    
+    func makeTitleViewCell(title: String, tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
+        let cell = TitleViewCell()
+        cell.setup(title: title, font: .preferredFont(forTextStyle: .headline))
+        return cell
+    }
+    
+    func makeAssetCardOne(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
+        let asset = AssetModel(titleLabel: "PETR",
+                               titleOne: "Variação",
+                               detailOne: "2,31%",
+                               titleTwo: "Último valor",
+                               detailTwo: "R$ 32,49")
+        return makeAssetCard(model: asset, tableView: tableView, indexPath: indexPath)
+    }
+    
+    func makeAssetCardTwo(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
+        let asset = AssetModel(titleLabel: "MGLU",
+                               titleOne: "Variação",
+                               detailOne: "2,39%",
+                               titleTwo: "Último valor",
+                               detailTwo: "5,69")
+        return makeAssetCard(model: asset, tableView: tableView, indexPath: indexPath)
+    }
+    
+    func makeAssetCardThree(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
+        let asset = AssetModel(titleLabel: "VALE",
+                               titleOne: "Variação",
+                               detailOne: "-0,05%",
+                               titleTwo: "Último valor",
+                               detailTwo: "R$ 96,79")
+        return makeAssetCard(model: asset, tableView: tableView, indexPath: indexPath)
+    }
+    
+    func makeAssetCard(model: AssetModel, tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
+        let cell = AssetCardViewCell()
+        cell.setup(model: model)
+        return cell
+    }
+    
+}
