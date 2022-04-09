@@ -1,0 +1,103 @@
+#==================================================================================================
+# Xcodegen documentation
+# https://github.com/yonaskolb/XcodeGen/blob/master/Docs/ProjectSpec.md#target-scheme
+#==================================================================================================
+
+#==================================================================================================
+name: MVC
+#==================================================================================================
+
+settings:
+  MARKETING_VERSION: "0.1.0"
+  SWIFT_VERSION: 5.0
+  VERSIONING_SYSTEM: "apple-generic"
+  CODE_SIGN_IDENTITY: "iPhone Developer"
+  CLANG_ENABLE_OBJC_WEAK: "YES"
+  ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES: "YES"
+  ARCHS: $(ARCHS_STANDARD)
+
+options:
+  xcodeVersion: "13.0"
+  createIntermediateGroups: true
+  developmentLanguage: "pt-BR"
+  deploymentTarget:
+    iOS: "12.0"
+
+configs:
+  Debug: debug
+  Release: release
+
+#==================================================================================================
+targets:
+#==================================================================================================
+
+#____________________________________________________________
+# Framework
+
+  MVC:
+
+    platform: iOS
+    type: framework
+    
+    sources:
+      - path: MVC
+
+    preBuildScripts:
+      - script: "${PODS_ROOT}/SwiftGen/bin/swiftgen"
+        name: SwiftGen
+
+    postBuildScripts:
+      - script: "${PODS_ROOT}/SwiftLint/swiftlint"
+        name: SwiftLint  
+
+    settings:
+      CODE_SIGN_STYLE: "Manual"
+      DEVELOPMENT_TEAM: ""
+      PRODUCT_BUNDLE_IDENTIFIER: br.com.microfrontendGenerator.MVC
+      INFOPLIST_FILE: MVC/Info.plist
+
+      ENABLE_BITCODE: "NO"
+      TARGETED_DEVICE_FAMILY: "1"
+      LD_RUNPATH_SEARCH_PATHS: "$(inherited) @executable_path/Frameworks"
+      ARCHS: $(ARCHS_STANDARD)
+
+#____________________________________________________________
+# Tests
+
+  MVCTests:
+
+    platform: iOS
+    type: bundle.unit-test
+
+    sources:
+      - path: MVCTests
+        excludes:
+          - "__Snapshots__"
+          - "**/__Snapshots__"
+    
+    dependencies:
+      - target: MVC
+
+#==================================================================================================
+schemes:
+#==================================================================================================
+
+  MVCSDK:
+    build:
+      targets:
+        MVC: [run, test]
+      parallelizeBuild: true
+      buildImplicitDependencies: true
+    archive:
+      config: Release
+    run:
+      config: Debug
+    test:
+      config: Debug
+      gatherCoverageData: true
+      coverageTargets:
+        - MVC
+      targets:
+        - MVCTests
+
+#==================================================================================================
