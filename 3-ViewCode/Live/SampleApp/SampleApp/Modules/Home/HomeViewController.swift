@@ -8,7 +8,20 @@
 import UIKit
 
 final class HomeViewController: UITableViewController {
-
+    
+    init() {
+        super.init(nibName: nil, bundle: nil)
+        let titleName = "Início"
+        let icon = UIImage(systemName: "homekit")
+        title = titleName
+        navigationItem.backButtonTitle = " "
+        tabBarItem = UITabBarItem(title: titleName, image: icon, selectedImage: icon)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -31,25 +44,29 @@ final class HomeViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
-        case 1: performSegue(withIdentifier: "showMyInvestments", sender: nil)
+        case 1: pushViewController(MyInvestmentsViewController())
         default: break
         }
     }
     
+    private func pushViewController(_ viewController: UIViewController, animated: Bool = true) {
+        navigationController?.pushViewController(viewController, animated: true)
+    }
+    
     @objc func didTapFixedIncone() {
-        performSegue(withIdentifier: "showFixedIncone", sender: nil)
+        pushViewController(FixedIncomeViewController(title: "Renda Fixa"))
     }
     
     @objc func didTapStocks() {
-        performSegue(withIdentifier: "showStocks", sender: nil)
+        pushViewController(StocksViewController(title: "Renda Variável"))
     }
     
     @objc func didTapFunds() {
-        performSegue(withIdentifier: "showFunds", sender: nil)
+        pushViewController(FundsViewController(title: "Fundos de Investimentos"))
     }
     
     @objc func didTapTreasury() {
-        performSegue(withIdentifier: "showTreasury", sender: nil)
+        pushViewController(TreasuryViewController(title: "Tesouro Direto"))
     }
 
 }

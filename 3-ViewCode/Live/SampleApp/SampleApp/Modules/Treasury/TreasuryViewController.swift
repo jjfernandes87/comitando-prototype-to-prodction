@@ -10,15 +10,6 @@ import UIKit
 class TreasuryViewController: BaseProducts {
 
     // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
-    }
-
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
         case 1: return makeTitleView(title: "4 ativos encontrados", indexPath: indexPath)
