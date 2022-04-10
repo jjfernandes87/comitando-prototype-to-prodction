@@ -1,0 +1,24 @@
+
+source 'https://cdn.cocoapods.org/'
+
+platform :ios, '13.0'
+
+inhibit_all_warnings!
+use_frameworks!
+
+workspace 'ViewCode'
+
+target 'ViewCode' do
+
+  pod 'SwiftLint'
+  pod 'SwiftGen', '6.5.1'
+
+  target 'ViewCodeTests' do
+      #pod 'Dependency', '~> 1.0.0'
+  end
+end
+
+target 'SampleApp' do
+  project 'SampleApp/SampleApp'
+  pod 'ViewCode', :path => './'
+end

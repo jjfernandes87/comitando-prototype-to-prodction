@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mxO-Nc-ecs">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="RPC-A4-bpx">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="mxO-Nc-ecs" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kUf-Lb-Vez">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.1058823529" green="0.062745098040000002" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.1058823529" green="0.062745098040000002" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.1058823529" green="0.062745098040000002" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="selectedImageTintColor" red="0.68627450980000004" green="0.81960784310000001" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="N7F-ZU-KXy" kind="relationship" relationship="viewControllers" id="ZnT-L5-DRB"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FTT-9d-RDh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="552" y="840"/>
+        </scene>
+        <!--Início-->
+        <scene sceneID="6NL-IX-chI">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="N7F-ZU-KXy" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Início" id="nUL-OT-0Xv">
+                        <imageReference key="image" image="homekit" catalog="system" symbolScale="medium"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="cff-Sq-fEY">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.1058823529" green="0.062745098040000002" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.68627450980000004" green="0.81960784310000001" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.1058823529" green="0.062745098040000002" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.68627450980000004" green="0.81960784310000001" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="wow-pR-utg" kind="relationship" relationship="rootViewController" id="o0W-7a-XID"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PHy-jU-W4O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1381" y="840"/>
+        </scene>
+        <!--Início-->
+        <scene sceneID="gXW-Nh-eiP">
+            <objects>
+                <tableViewController id="wow-pR-utg" customClass="HomeViewController" customModule="SampleApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="azu-7K-kmu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.1058823529" green="0.062745098040000002" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="wow-pR-utg" id="5Rd-je-dBt"/>
+                            <outlet property="delegate" destination="wow-pR-utg" id="Jto-5Y-Xsy"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Início" id="fHD-cW-0DM">
+                        <barButtonItem key="backBarButtonItem" title=" " id="dTm-zj-xwz"/>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="hTy-X8-vWb" kind="show" identifier="showFixedIncone" id="lpw-ot-7Dj"/>
+                        <segue destination="GkK-tP-0dm" kind="show" identifier="showStocks" id="B0n-oN-Sjo"/>
+                        <segue destination="lFe-UR-hbu" kind="show" identifier="showMyInvestments" id="Cz1-HE-Aos"/>
+                        <segue destination="v9P-3o-RLl" kind="show" identifier="showFunds" id="Ebv-2B-wCm"/>
+                        <segue destination="PWS-WW-42R" kind="show" identifier="showTreasury" id="av3-uQ-x4f"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7VC-gO-9qR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2200" y="840"/>
+        </scene>
+        <!--Início-->
+        <scene sceneID="t5h-xI-Z78">
+            <objects>
+                <tableViewController id="lFe-UR-hbu" customClass="MyInvestmentsViewController" customModule="SampleApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="X3H-fi-c4E">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.1058823529" green="0.062745098040000002" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="lFe-UR-hbu" id="l0p-2K-ARY"/>
+                            <outlet property="delegate" destination="lFe-UR-hbu" id="cpe-Qs-CcO"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Início" id="sV9-4e-x0K">
+                        <barButtonItem key="backBarButtonItem" title=" " id="vg9-DA-aEe"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xhk-ut-lwq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="551" y="1636"/>
+        </scene>
+        <!--Renda Fixa-->
+        <scene sceneID="v9R-dL-PQl">
+            <objects>
+                <tableViewController id="hTy-X8-vWb" customClass="FixedIncomeViewController" customModule="SampleApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="pG2-5e-cnZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.1058823529" green="0.062745098040000002" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="hTy-X8-vWb" id="3l4-3Z-qmS"/>
+                            <outlet property="delegate" destination="hTy-X8-vWb" id="JY6-8j-hqp"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Renda Fixa" id="RmG-xw-I3H">
+                        <barButtonItem key="backBarButtonItem" title=" " id="1ja-ZV-ARD"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZDb-Wm-5el" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1393" y="1636"/>
+        </scene>
+        <!--Renda Variável-->
+        <scene sceneID="y75-UP-OhL">
+            <objects>
+                <tableViewController id="GkK-tP-0dm" customClass="StocksViewController" customModule="SampleApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="6XV-tS-Bso">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.1058823529" green="0.062745098040000002" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="GkK-tP-0dm" id="WbU-xO-Yy9"/>
+                            <outlet property="delegate" destination="GkK-tP-0dm" id="VV8-bM-QfJ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Renda Variável" id="a9Z-ny-ITp">
+                        <barButtonItem key="backBarButtonItem" title=" " id="Pnu-dj-1Gv"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QK8-io-wie" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2104" y="1636"/>
+        </scene>
+        <!--Fundos de Investimentos-->
+        <scene sceneID="Z6d-WE-TBK">
+            <objects>
+                <tableViewController id="v9P-3o-RLl" customClass="FundsViewController" customModule="SampleApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="zzG-Y3-HQN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.1058823529" green="0.062745098040000002" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="v9P-3o-RLl" id="oCF-Bb-sHa"/>
+                            <outlet property="delegate" destination="v9P-3o-RLl" id="pjn-UE-Ml2"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Fundos de Investimentos" id="lhp-ge-385">
+                        <barButtonItem key="backBarButtonItem" title=" " id="x8m-qR-DGk"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CaN-8f-9QD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2851" y="1636"/>
+        </scene>
+        <!--Tesouro Direto-->
+        <scene sceneID="fNf-tw-s4h">
+            <objects>
+                <tableViewController id="PWS-WW-42R" customClass="TreasuryViewController" customModule="SampleApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="3z1-VZ-4UL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.1058823529" green="0.062745098040000002" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="PWS-WW-42R" id="ZkC-Mc-BHk"/>
+                            <outlet property="delegate" destination="PWS-WW-42R" id="VFa-Hr-yu9"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Tesouro Direto" id="wpp-dj-Tik">
+                        <barButtonItem key="backBarButtonItem" title=" " id="bb6-dq-U3K"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q2y-KT-scm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3606" y="1636"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="homekit" catalog="system" width="128" height="106"/>
+    </resources>
+</document>
