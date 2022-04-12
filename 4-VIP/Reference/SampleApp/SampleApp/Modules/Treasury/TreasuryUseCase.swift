@@ -7,8 +7,8 @@
 
 import UIKit
 
-final class TreasuryAdapter: BaseProductsAdapterInput {
-    func convertData(completion: @escaping (([UITableViewCell]) -> Void)) {
+final class TreasuryUseCase: BaseProductsUseCase {
+    func responseData(completion: @escaping (([UITableViewCell]) -> Void)) {
         var rows: [UITableViewCell] = []
         rows.append(makeAboutView(title: makeAbout()))
         rows.append(makeTitleView(title: "3 ativos encontrados"))
@@ -19,7 +19,7 @@ final class TreasuryAdapter: BaseProductsAdapterInput {
     }
 }
 
-private extension TreasuryAdapter {
+private extension TreasuryUseCase {
     
     func makeAbout() -> String {
         return """

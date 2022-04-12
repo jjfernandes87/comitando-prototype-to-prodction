@@ -12,7 +12,7 @@ public protocol BaseProductsInteractorInput: AnyObject {
 }
 
 protocol BaseProductsInteractorOutput: AnyObject {
-    func fetchedData()
+    func fetchedData(_ content: [UITableViewCell])
 }
 
 protocol BaseProductsPresenterOutput: AnyObject {
@@ -25,14 +25,14 @@ protocol BaseProductsRepositoryInput: AnyObject {
     func fetchData(completion: @escaping (() -> Void))
 }
 
-protocol BaseProductsAdapterInput: AnyObject {
+protocol BaseProductsUseCase: AnyObject {
     func makeAboutView(title: String) -> UITableViewCell
     func makeTitleView(title: String) -> UITableViewCell
     func makeAssetCard(model: AssetModel) -> UITableViewCell
-    func convertData(completion: @escaping (([UITableViewCell]) -> Void))
+    func responseData(completion: @escaping (([UITableViewCell]) -> Void))
 }
 
-extension BaseProductsAdapterInput {
+extension BaseProductsUseCase {
     func makeAboutView(title: String) -> UITableViewCell {
         let cell = AboutViewCell()
         cell.setup(title: title)

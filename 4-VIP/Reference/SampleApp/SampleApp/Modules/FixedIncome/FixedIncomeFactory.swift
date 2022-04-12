@@ -10,10 +10,10 @@ import UIKit
 final class FixedIncomeFactory: ConfiguratorFactory {
     
     func createModule() -> UIViewController {
-        let adapter = FixedIncomeAdapter()
-        let presenter = BaseProductsPresenter(adapter: adapter)
+        let useCase = FixedIncomeUseCase()
+        let presenter = BaseProductsPresenter()
         let repository = FixedIncomeRepository()
-        let interactor = BaseProductsInteractor(presenter: presenter, repository: repository)
+        let interactor = BaseProductsInteractor(useCase: useCase, presenter: presenter, repository: repository)
         let vc = BaseProducts(title: "Renda Fixa", interactor: interactor)
         presenter.output = vc
         

@@ -5,22 +5,16 @@
 //  Created by Julio Fernandes on 12/04/22.
 //
 
-import Foundation
+import UIKit
 
 final class BaseProductsPresenter {
     
     weak var output: BaseProductsPresenterOutput?
-    private let adapter: BaseProductsAdapterInput
     
-    init(adapter: BaseProductsAdapterInput) {
-        self.adapter = adapter
-    }
 }
 
 extension BaseProductsPresenter: BaseProductsInteractorOutput {
-    func fetchedData() {
-        adapter.convertData { [output] content in
-            output?.showData(content: content)
-        }
+    func fetchedData(_ content: [UITableViewCell]) {
+        output?.showData(content: content)
     }
 }
