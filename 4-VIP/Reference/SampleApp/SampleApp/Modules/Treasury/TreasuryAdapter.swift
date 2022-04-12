@@ -1,29 +1,26 @@
 //
-//  TreasuryViewController.swift
+//  TreasuryAdapter.swift
 //  SampleApp
 //
-//  Created by Julio Fernandes on 22/03/22.
+//  Created by Julio Fernandes on 12/04/22.
 //
 
 import UIKit
 
-class TreasuryViewController: BaseProducts {
-
-    // MARK: - Table view data source
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.row {
-        case 1: return makeTitleView(title: "3 ativos encontrados", indexPath: indexPath)
-        case 2: return makeAssetCard(model: makeAssetOne() ,indexPath: indexPath)
-        case 3: return makeAssetCard(model: makeAssetTwo() ,indexPath: indexPath)
-        case 4: return makeAssetCard(model: makeAssetThree() ,indexPath: indexPath)
-        default: return makeAboutView(title: makeAbout(), indexPath: indexPath)
-        }
+final class TreasuryAdapter: BaseProductsAdapterInput {
+    func convertData(completion: @escaping (([UITableViewCell]) -> Void)) {
+        var rows: [UITableViewCell] = []
+        rows.append(makeAboutView(title: makeAbout()))
+        rows.append(makeTitleView(title: "3 ativos encontrados"))
+        rows.append(makeAssetCard(model: makeAssetOne()))
+        rows.append(makeAssetCard(model: makeAssetTwo()))
+        rows.append(makeAssetCard(model: makeAssetThree()))
+        completion(rows)
     }
-
 }
 
-private extension TreasuryViewController {
-
+private extension TreasuryAdapter {
+    
     func makeAbout() -> String {
         return """
         Invista com a mesma segurança da poupança e maior renatabilidade. O Tesouro Direto é uma forma de investir em títulos do governo federal por um prazo e rentabilidade definidos.
@@ -53,8 +50,5 @@ private extension TreasuryViewController {
                                rightDetailOne: "5,74%",
                                rightDetailTwo: "R$ 300,00")
     }
-    
+
 }
-
-
-

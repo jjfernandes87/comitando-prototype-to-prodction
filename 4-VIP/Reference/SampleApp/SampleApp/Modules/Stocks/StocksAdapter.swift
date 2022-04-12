@@ -1,29 +1,26 @@
 //
-//  StocksViewController.swift
+//  StocksAdapter.swift
 //  SampleApp
 //
-//  Created by Julio Fernandes on 22/03/22.
+//  Created by Julio Fernandes on 12/04/22.
 //
 
 import UIKit
 
-class StocksViewController: BaseProducts {
-
-    // MARK: - Table view data source
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.row {
-        case 1: return makeTitleView(title: "3 ativos encontrados", indexPath: indexPath)
-        case 2: return makeAssetCard(model: makeAssetOne() ,indexPath: indexPath)
-        case 3: return makeAssetCard(model: makeAssetTwo() ,indexPath: indexPath)
-        case 4: return makeAssetCard(model: makeAssetThree() ,indexPath: indexPath)
-        default: return makeAboutView(title: makeAbout(), indexPath: indexPath)
-        }
+final class StocksAdapter: BaseProductsAdapterInput {
+    func convertData(completion: @escaping (([UITableViewCell]) -> Void)) {
+        var rows: [UITableViewCell] = []
+        rows.append(makeAboutView(title: makeAbout()))
+        rows.append(makeTitleView(title: "3 ativos encontrados"))
+        rows.append(makeAssetCard(model: makeAssetOne()))
+        rows.append(makeAssetCard(model: makeAssetTwo()))
+        rows.append(makeAssetCard(model: makeAssetThree()))
+        completion(rows)
     }
-
 }
 
-private extension StocksViewController {
-
+private extension StocksAdapter {
+    
     func makeAbout() -> String {
         return """
         Ativos de renda variável são aqueles cuja remuneração ou retorno de capital não pode ser dimensionado no momento da aplicação, podendo variar positivamente ou negativamente, de acordo com as expectativas do mercado.
@@ -54,5 +51,4 @@ private extension StocksViewController {
                           rightDetailTwo: "5,69")
     }
 
-    
 }

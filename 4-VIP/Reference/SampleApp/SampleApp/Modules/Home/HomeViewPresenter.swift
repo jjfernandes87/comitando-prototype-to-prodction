@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class HomeViewPresenter{
+final class HomeViewPresenter {
     weak var output: HomeViewPresenterOutput?
     init() {}
 }
@@ -77,18 +77,18 @@ private extension HomeViewPresenter {
     }
     
     @objc func didTapFixedIncone() {
-        output?.pushViewController(FixedIncomeViewController(title: "Renda Fixa"), animated: true)
+        output?.pushViewController(FixedIncomeFactory().createModule(), animated: true)
     }
     
     @objc func didTapStocks() {
-        output?.pushViewController(StocksViewController(title: "Renda Variável"), animated: true)
+        output?.pushViewController(StocksFactory().createModule(), animated: true)
     }
     
     @objc func didTapFunds() {
-        output?.pushViewController(FundsViewController(title: "Fundos de Investimentos"), animated: true)
+        output?.pushViewController(FundsFactory().createModule(), animated: true)
     }
     
     @objc func didTapTreasury() {
-        output?.pushViewController(TreasuryViewController(title: "Tesouro Direto"), animated: true)
+        output?.pushViewController(TreasuryFactory().createModule(), animated: true)
     }
 }

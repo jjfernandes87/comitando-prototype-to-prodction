@@ -1,29 +1,26 @@
 //
-//  FundsViewController.swift
+//  FundsAdapter.swift
 //  SampleApp
 //
-//  Created by Julio Fernandes on 22/03/22.
+//  Created by Julio Fernandes on 12/04/22.
 //
 
 import UIKit
 
-class FundsViewController: BaseProducts {
-
-    // MARK: - Table view data source
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.row {
-        case 1: return makeTitleView(title: "3 ativos encontrados", indexPath: indexPath)
-        case 2: return makeAssetCard(model: makeAssetOne() ,indexPath: indexPath)
-        case 3: return makeAssetCard(model: makeAssetTwo() ,indexPath: indexPath)
-        case 4: return makeAssetCard(model: makeAssetThree() ,indexPath: indexPath)
-        default: return makeAboutView(title: makeAbout(), indexPath: indexPath)
-        }
+final class FundsAdapter: BaseProductsAdapterInput {
+    func convertData(completion: @escaping (([UITableViewCell]) -> Void)) {
+        var rows: [UITableViewCell] = []
+        rows.append(makeAboutView(title: makeAbout()))
+        rows.append(makeTitleView(title: "3 ativos encontrados"))
+        rows.append(makeAssetCard(model: makeAssetOne()))
+        rows.append(makeAssetCard(model: makeAssetTwo()))
+        rows.append(makeAssetCard(model: makeAssetThree()))
+        completion(rows)
     }
-
 }
 
-private extension FundsViewController {
-
+private extension FundsAdapter {
+    
     func makeAbout() -> String {
         return """
         Fundos de Investimentos são uma modalidade de aplicação financeira que reúne recursos de um conjunto de investidores (cotistas). Tenha acesso a diversos gestores do mercado em um só lugar.
@@ -55,5 +52,3 @@ private extension FundsViewController {
     }
 
 }
-
-

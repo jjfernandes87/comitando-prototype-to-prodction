@@ -38,7 +38,7 @@ final class HomeViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
-        case 1: pushViewController(MyInvestmentsViewController(), animated: true)
+        case 1: pushViewController(MyInvestmentsFactory().createModule(), animated: true)
         default: break
         }
     }
