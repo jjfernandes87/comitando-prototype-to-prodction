@@ -1,0 +1,14 @@
+strings:
+  inputs: VIP/Resources/Localizable.strings
+  outputs:
+    - templateName: structured-swift5
+      params:
+        enumName: Localization
+      output: VIP/Generated/Strings.swift
+
+# xcassets:
+#   inputs:
+#     - VIP/Resources/Assets.xcassets
+#   outputs:
+#     - templateName: swift5
+#       output: VIP/Generated/Images.swift

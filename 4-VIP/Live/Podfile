@@ -1,0 +1,24 @@
+
+source 'https://cdn.cocoapods.org/'
+
+platform :ios, '13.0'
+
+inhibit_all_warnings!
+use_frameworks!
+
+workspace 'VIP'
+
+target 'VIP' do
+
+  pod 'SwiftLint'
+  pod 'SwiftGen', '6.5.1'
+
+  target 'VIPTests' do
+      #pod 'Dependency', '~> 1.0.0'
+  end
+end
+
+target 'SampleApp' do
+  project 'SampleApp/SampleApp'
+  pod 'VIP', :path => './'
+end
