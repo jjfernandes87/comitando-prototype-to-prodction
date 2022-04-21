@@ -34,11 +34,6 @@ removeCurrentFiles() {
     find ./ -name "*.entitlements" -exec rm -rf {} \;
 }
 
-# pod install
-podInstall() {
-    bundle exec pod install
-}
-
 # create project
 createProject() {
     local projectName=$1
@@ -52,20 +47,6 @@ createProject() {
     echo .
 	# Xcodegen for framework
     xcodegen generate
-    echo .
-    # Xcodegen for sample app
-    cd SampleApp
-    xcodegen generate
-    echo .
-    echo ============================================================================
-    echo "$projectName" Pod Install
-    echo ============================================================================
-    echo .
-    podInstall
-    echo .
-    echo ============================================================================
-    echo "$projectName".xcworkspace created
-    echo ============================================================================
     echo .
 }
 
