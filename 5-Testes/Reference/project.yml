@@ -22,7 +22,12 @@ options:
   createIntermediateGroups: true
   deploymentTarget:
     iOS: "13.0"
-  
+
+packages:
+  SnapshotTesting:
+    url: https://github.com/pointfreeco/swift-snapshot-testing.git
+    from: 1.9.0
+
 #==================================================================================================
 targets:
 #==================================================================================================
@@ -52,6 +57,7 @@ targets:
     
     dependencies:
       - target: SampleInvestments
+      - package: SnapshotTesting  
 
 #==================================================================================================
 schemes:

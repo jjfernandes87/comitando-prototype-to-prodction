@@ -6,15 +6,19 @@
 //
 
 import XCTest
+import SnapshotTesting
 @testable import SampleTests
 
 class AssetCardViewCellTests: XCTestCase {
 
+    let size: CGSize = CGSize(width: 375, height: 154)
+    let isRecord = false
     var sut: AssetCardViewCell?
     
     override func setUp() {
         super.setUp()
         sut = AssetCardViewCell()
+        sut?.backgroundColor = UIColor(named: "comitando-blue")
     }
     
     override func tearDown() {
@@ -36,6 +40,17 @@ class AssetCardViewCellTests: XCTestCase {
         
         sut?.prepareForReuse()
         XCTAssertEqual(titleLabel.text, "")
+    }
+    
+    func test_assertSnapshot() throws {
+        let sut = try XCTUnwrap(sut)
+        let model = AssetModel(title: "DEV ATIVO - OUT/2022",
+                               leftDetailOne: "Taxa(a.a)",
+                               leftDetailTwo: "Aplicação mínima",
+                               rightDetailOne: "IPCA-A+7,74%",
+                               rightDetailTwo: "R$ 1.000,00")
+        sut.setup(model: model)
+        assertSnapshot(matching: sut, as: .image(size: size), record: isRecord)
     }
 
 }
