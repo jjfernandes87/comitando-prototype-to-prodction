@@ -8,7 +8,7 @@ name: Prototype
 #==================================================================================================
 
 settings:
-  MARKETING_VERSION: "0.1.0"
+  MARKETING_VERSION: "1.0.0"
   SWIFT_VERSION: 5.0
   VERSIONING_SYSTEM: "apple-generic"
   CODE_SIGN_IDENTITY: "iPhone Developer"
@@ -17,87 +17,39 @@ settings:
   ARCHS: $(ARCHS_STANDARD)
 
 options:
+  bundleIdPrefix: com.comitando.
   xcodeVersion: "13.0"
   createIntermediateGroups: true
-  developmentLanguage: "pt-BR"
   deploymentTarget:
-    iOS: "12.0"
-
-configs:
-  Debug: debug
-  Release: release
+    iOS: "13.0"
 
 #==================================================================================================
 targets:
 #==================================================================================================
 
-#____________________________________________________________
-# Framework
-
   Prototype:
 
     platform: iOS
-    type: framework
+    type: application
     
     sources:
-      - path: Prototype
-
-    preBuildScripts:
-      - script: "${PODS_ROOT}/SwiftGen/bin/swiftgen"
-        name: SwiftGen
-
-    postBuildScripts:
-      - script: "${PODS_ROOT}/SwiftLint/swiftlint"
-        name: SwiftLint  
+      - path: SampleApp
 
     settings:
+      PRODUCT_BUNDLE_IDENTIFIER: SampleApp
+      INFOPLIST_FILE: SampleApp/Info.plist
       CODE_SIGN_STYLE: "Manual"
       DEVELOPMENT_TEAM: ""
-      PRODUCT_BUNDLE_IDENTIFIER: br.com.microfrontendGenerator.Prototype
-      INFOPLIST_FILE: Prototype/Info.plist
-
-      ENABLE_BITCODE: "NO"
-      TARGETED_DEVICE_FAMILY: "1"
-      LD_RUNPATH_SEARCH_PATHS: "$(inherited) @executable_path/Frameworks"
-      ARCHS: $(ARCHS_STANDARD)
-
-#____________________________________________________________
-# Tests
-
-  PrototypeTests:
-
-    platform: iOS
-    type: bundle.unit-test
-
-    sources:
-      - path: PrototypeTests
-        excludes:
-          - "__Snapshots__"
-          - "**/__Snapshots__"
-    
-    dependencies:
-      - target: Prototype
-
+      PROVISIONING_PROFILE: "Wildcard"
 #==================================================================================================
 schemes:
 #==================================================================================================
 
-  PrototypeSDK:
+  Sample:
     build:
       targets:
-        Prototype: [run, test]
+        Prototype: [run]
       parallelizeBuild: true
       buildImplicitDependencies: true
-    archive:
-      config: Release
     run:
       config: Debug
-    test:
-      config: Debug
-      gatherCoverageData: true
-      coverageTargets:
-        - Prototype
-      targets:
-        - PrototypeTests
-
-#==================================================================================================
