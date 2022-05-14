@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites name='SampleTestsTests.xctest' tests='53' failures='0'>
+  <testsuite name='SampleTestsTests.AboutViewCellTests' tests='2' failures='0'>
+    <testcase classname='SampleTestsTests.AboutViewCellTests' name='test_assertSnapshot' time='0.013'/>
+    <testcase classname='SampleTestsTests.AboutViewCellTests' name='test_initCoder' time='0.002'/>
+  </testsuite>
+  <testsuite name='SampleTestsTests.AssetCardViewCellTests' tests='3' failures='0'>
+    <testcase classname='SampleTestsTests.AssetCardViewCellTests' name='test_assertSnapshot' time='0.010'/>
+    <testcase classname='SampleTestsTests.AssetCardViewCellTests' name='test_initCoder' time='0.002'/>
+    <testcase classname='SampleTestsTests.AssetCardViewCellTests' name='test_prepareForReuse' time='0.001'/>
+  </testsuite>
+  <testsuite name='SampleTestsTests.BaseProductsInteractorTests' tests='1' failures='0'>
+    <testcase classname='SampleTestsTests.BaseProductsInteractorTests' name='test_fetchData' time='0.000'/>
+  </testsuite>
+  <testsuite name='SampleTestsTests.BaseProductsPresenterTests' tests='1' failures='0'>
+    <testcase classname='SampleTestsTests.BaseProductsPresenterTests' name='test_fetchedData' time='0.000'/>
+  </testsuite>
+  <testsuite name='SampleTestsTests.BaseProductsTests' tests='4' failures='0'>
+    <testcase classname='SampleTestsTests.BaseProductsTests' name='test_cellForRowAt' time='0.001'/>
+    <testcase classname='SampleTestsTests.BaseProductsTests' name='test_initCoder' time='0.000'/>
+    <testcase classname='SampleTestsTests.BaseProductsTests' name='test_showContent' time='0.001'/>
+    <testcase classname='SampleTestsTests.BaseProductsTests' name='test_viewDidLoad' time='0.001'/>
+  </testsuite>
+  <testsuite name='SampleTestsTests.CollectionProductsViewCellTests' tests='2' failures='0'>
+    <testcase classname='SampleTestsTests.CollectionProductsViewCellTests' name='test_assertSnapshot' time='0.011'/>
+    <testcase classname='SampleTestsTests.CollectionProductsViewCellTests' name='test_initCoder' time='0.002'/>
+  </testsuite>
+  <testsuite name='SampleTestsTests.FixedIncomeFactoryTests' tests='1' failures='0'>
+    <testcase classname='SampleTestsTests.FixedIncomeFactoryTests' name='test_createModule' time='0.000'/>
+  </testsuite>
+  <testsuite name='SampleTestsTests.FixedIncomeRepositoryTests' tests='1' failures='0'>
+    <testcase classname='SampleTestsTests.FixedIncomeRepositoryTests' name='test' time='0.000'/>
+  </testsuite>
+  <testsuite name='SampleTestsTests.FixedIncomeViewUseCaseTests' tests='1' failures='0'>
+    <testcase classname='SampleTestsTests.FixedIncomeViewUseCaseTests' name='test_responseData' time='0.002'/>
+  </testsuite>
+  <testsuite name='SampleTestsTests.FundsFactoryTests' tests='1' failures='0'>
+    <testcase classname='SampleTestsTests.FundsFactoryTests' name='test_createModule' time='0.000'/>
+  </testsuite>
+  <testsuite name='SampleTestsTests.FundsRepositoryTests' tests='1' failures='0'>
+    <testcase classname='SampleTestsTests.FundsRepositoryTests' name='test' time='0.000'/>
+  </testsuite>
+  <testsuite name='SampleTestsTests.FundsViewUseCaseTests' tests='1' failures='0'>
+    <testcase classname='SampleTestsTests.FundsViewUseCaseTests' name='test_responseData' time='0.002'/>
+  </testsuite>
+  <testsuite name='SampleTestsTests.HomeViewControllerTests' tests='5' failures='0'>
+    <testcase classname='SampleTestsTests.HomeViewControllerTests' name='test_didSelectRowAt' time='0.505'/>
+    <testcase classname='SampleTestsTests.HomeViewControllerTests' name='test_initCoder' time='0.001'/>
+    <testcase classname='SampleTestsTests.HomeViewControllerTests' name='test_pushViewController' time='0.001'/>
+    <testcase classname='SampleTestsTests.HomeViewControllerTests' name='test_showContent' time='0.001'/>
+    <testcase classname='SampleTestsTests.HomeViewControllerTests' name='test_viewDidLoad' time='0.001'/>
+  </testsuite>
+  <testsuite name='SampleTestsTests.HomeViewFactoryTests' tests='1' failures='0'>
+    <testcase classname='SampleTestsTests.HomeViewFactoryTests' name='test_createModule' time='0.000'/>
+  </testsuite>
+  <testsuite name='SampleTestsTests.HomeViewInteractorTests' tests='1' failures='0'>
+    <testcase classname='SampleTestsTests.HomeViewInteractorTests' name='test_fetchData' time='0.000'/>
+  </testsuite>
+  <testsuite name='SampleTestsTests.HomeViewPresenterTests' tests='5' failures='0'>
+    <testcase classname='SampleTestsTests.HomeViewPresenterTests' name='test_didTapFixedIncone' time='0.000'/>
+    <testcase classname='SampleTestsTests.HomeViewPresenterTests' name='test_didTapFunds' time='0.000'/>
+    <testcase classname='SampleTestsTests.HomeViewPresenterTests' name='test_didTapStocks' time='0.000'/>
+    <testcase classname='SampleTestsTests.HomeViewPresenterTests' name='test_didTapTreasury' time='0.000'/>
+    <testcase classname='SampleTestsTests.HomeViewPresenterTests' name='test_fetchedData' time='0.002'/>
+  </testsuite>
+  <testsuite name='SampleTestsTests.MyInvestmentsViewControllerTests' tests='4' failures='0'>
+    <testcase classname='SampleTestsTests.MyInvestmentsViewControllerTests' name='test_cellForRowAt' time='0.001'/>
+    <testcase classname='SampleTestsTests.MyInvestmentsViewControllerTests' name='test_initCoder' time='0.000'/>
+    <testcase classname='SampleTestsTests.MyInvestmentsViewControllerTests' name='test_showContent' time='0.001'/>
+    <testcase classname='SampleTestsTests.MyInvestmentsViewControllerTests' name='test_viewDidLoad' time='0.000'/>
+  </testsuite>
+  <testsuite name='SampleTestsTests.MyInvestmentsViewFactoryTests' tests='1' failures='0'>
+    <testcase classname='SampleTestsTests.MyInvestmentsViewFactoryTests' name='test_createModule' time='0.000'/>
+  </testsuite>
+  <testsuite name='SampleTestsTests.MyInvestmentsViewInteractorTests' tests='1' failures='0'>
+    <testcase classname='SampleTestsTests.MyInvestmentsViewInteractorTests' name='test_fetchData' time='0.000'/>
+  </testsuite>
+  <testsuite name='SampleTestsTests.MyInvestmentsViewPresenterTests' tests='1' failures='0'>
+    <testcase classname='SampleTestsTests.MyInvestmentsViewPresenterTests' name='test_fetchedData' time='0.002'/>
+  </testsuite>
+  <testsuite name='SampleTestsTests.MyPatrimonyViewCellTests' tests='2' failures='0'>
+    <testcase classname='SampleTestsTests.MyPatrimonyViewCellTests' name='test_assertSnapshot' time='0.009'/>
+    <testcase classname='SampleTestsTests.MyPatrimonyViewCellTests' name='test_initCoder' time='0.002'/>
+  </testsuite>
+  <testsuite name='SampleTestsTests.PatrimonyViewCellTests' tests='2' failures='0'>
+    <testcase classname='SampleTestsTests.PatrimonyViewCellTests' name='test_assertSnapshot' time='0.007'/>
+    <testcase classname='SampleTestsTests.PatrimonyViewCellTests' name='test_initCoder' time='0.001'/>
+  </testsuite>
+  <testsuite name='SampleTestsTests.ProductCardViewCellTests' tests='2' failures='0'>
+    <testcase classname='SampleTestsTests.ProductCardViewCellTests' name='test_assertSnapshot' time='0.009'/>
+    <testcase classname='SampleTestsTests.ProductCardViewCellTests' name='test_initCoder' time='0.002'/>
+  </testsuite>
+  <testsuite name='SampleTestsTests.ProductViewTests' tests='1' failures='0'>
+    <testcase classname='SampleTestsTests.ProductViewTests' name='test_initCoder' time='0.001'/>
+  </testsuite>
+  <testsuite name='SampleTestsTests.StocksFactoryTests' tests='1' failures='0'>
+    <testcase classname='SampleTestsTests.StocksFactoryTests' name='test_createModule' time='0.000'/>
+  </testsuite>
+  <testsuite name='SampleTestsTests.StocksRepositoryTests' tests='1' failures='0'>
+    <testcase classname='SampleTestsTests.StocksRepositoryTests' name='test' time='0.000'/>
+  </testsuite>
+  <testsuite name='SampleTestsTests.StocksViewUseCaseTests' tests='1' failures='0'>
+    <testcase classname='SampleTestsTests.StocksViewUseCaseTests' name='test_responseData' time='0.002'/>
+  </testsuite>
+  <testsuite name='SampleTestsTests.TitleViewCellTests' tests='2' failures='0'>
+    <testcase classname='SampleTestsTests.TitleViewCellTests' name='test_assertSnapshot' time='0.004'/>
+    <testcase classname='SampleTestsTests.TitleViewCellTests' name='test_initCoder' time='0.001'/>
+  </testsuite>
+  <testsuite name='SampleTestsTests.TreasuryFactoryTests' tests='1' failures='0'>
+    <testcase classname='SampleTestsTests.TreasuryFactoryTests' name='test_createModule' time='0.000'/>
+  </testsuite>
+  <testsuite name='SampleTestsTests.TreasuryRepositoryTests' tests='1' failures='0'>
+    <testcase classname='SampleTestsTests.TreasuryRepositoryTests' name='test' time='0.000'/>
+  </testsuite>
+  <testsuite name='SampleTestsTests.TreasuryViewUseCaseTests' tests='1' failures='0'>
+    <testcase classname='SampleTestsTests.TreasuryViewUseCaseTests' name='test_responseData' time='0.002'/>
+  </testsuite>
+</testsuites>
